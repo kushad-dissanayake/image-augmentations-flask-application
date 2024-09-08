@@ -1,0 +1,62 @@
+body {
+    background-image: url('../images/computer vision.jpg');
+    background-size: cover;
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+.logo-text {
+    text-align: center;
+    margin-top: 0px;
+    font-size: 5em; 
+    font-weight: bold;
+    color: white;
+}
+
+.container {
+    text-align: center;
+    background-color: rgba(255, 255, 255, 0.3); 
+    padding: 50px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+    font-size: 53px;
+    color: black;
+    margin-bottom: 20px;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+input[type="file"] {
+    font-size: 18px;
+    margin-bottom: 20px;
+    padding: 10px;
+    border: 2px solid #007bff;
+    border-radius: px;
+    background-color: #e9ecef;
+    cursor: pointer;
+}
+
+input[type="submit"] {
+    font-size: 18px;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    background-color: #007bff;
+    color: white;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+input[type="submit"]:hover {
+    background-color: #0056b3;
+}

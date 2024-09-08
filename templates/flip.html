@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Flip Augmentation</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/stylesflip.css') }}">
+</head>
+<body>
+    <section class="header">
+        <div class="logo">
+            <h2 class="logo-text">ADD FLIP AUGMENTATION</h2>
+        </div>
+        <div class="container">
+            <div class="left-side">
+                <div class="card">
+                    <img id="original-image" src="{{ file_url }}" alt="Original Image">
+                    <p>Original</p>
+                </div>
+                <div class="bottom-images">
+                    <div class="card">
+                        <img id="horizontal-image" src="#" alt="Horizontal Flipped Image" style="display:none;">
+                        <p>Horizontal</p>
+                    </div>
+                    <div class="card">
+                        <img id="vertical-image" src="#" alt="Vertical Flipped Image" style="display:none;">
+                        <p>Vertical</p>
+                    </div>
+                </div>
+                <a href="/augment" class="go-back">Go Back</a>
+            </div>
+            <div class="right-side">
+                <form id="flip-form" action="/flip" method="post" class="form-container">
+                    <input type="hidden" name="filename" value="{{ filename }}">
+                    <input type="hidden" name="horizontal_flipped" id="horizontal-flipped" value="">
+                    <input type="hidden" name="vertical_flipped" id="vertical-flipped" value="">
+                    <div class="checkbox-container">
+                        <label>
+                            <input type="checkbox" name="horizontal" onclick="updatePreview('horizontal')">
+                            Horizontal
+                        </label>
+                        <label>
+                            <input type="checkbox" name="vertical" onclick="updatePreview('vertical')">
+                            Vertical
+                        </label>
+                    </div>
+                    <button type="button" onclick="applyAugmentations()" class="btn-submit">Apply</button>
+                </form>
+            </div>
+        </div>
+    </section>
+    <script src="{{ url_for('static', filename='js/scriptsflip.js') }}"></script>
+</body>
+</html>

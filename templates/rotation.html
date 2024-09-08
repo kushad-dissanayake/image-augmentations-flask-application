@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rotation Interface</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/stylesrotation.css') }}">
+</head>
+<body>
+    <div class="header">
+        <h1 class="logo-text">ADD ROTATION AUGMENTATION</h1>
+    </div>
+    <div class="container">
+        <div class="left-side">
+            <div class="card">
+                <img id="original-image" src="{{ url_for('static', filename='uploads/' ~ filename) }}" alt="Original Image">
+                <p class="card-text">Preprocessed</p>
+            </div>
+            <div class="bottom-images">
+                <div class="card">
+                    <img id="left-rotated-image" src="{{ url_for('static', filename='uploads/' ~ filename) }}" alt="Left Rotated Image">
+                    <p id="rotation-right-percentage">0°</p>
+                    <p class="card-text">Right Rotated Image</p>               
+                </div>
+                <div class="card">
+                    <img id="right-rotated-image" src="{{ url_for('static', filename='uploads/' ~ filename) }}" alt="Right Rotated Image">
+                    <p id="rotation-left-percentage">0°</p>
+                    <p class="card-text">Left Rotated Image</p>
+                </div>
+            </div>
+            <a href="{{ url_for('augment', filename=request.args.get('filename')) }}" class="go-back">Go Back</a>
+        </div>
+        <div class="right-side">
+            <div class="form-container">
+                <div class="controls">
+                    <p class="des-text">Add variability to rotations to help your model be more resilient to camera roll.</p>
+                    <div class="slider-container">
+                        <span class="slider-value">0°</span>
+                        <div class="slider-wrapper">
+                            <input type="range" min="0" max="45" value="0" class="slider" id="rotation-slider">
+                            <span class="slider-current-value" id="current-value">0°</span>
+                        </div>
+                        <span class="slider-value">45°</span>
+                    </div>
+                </div>
+                <div class="tip">
+                    <p>Why should I use the Random Rotate augmentation?</p>
+                    <p>It helps your model detect objects even when the camera or subject are not perfectly aligned.</p>
+                </div>
+                <form action="/rotate" method="post" id="rotation-form">
+                    <input type="hidden" name="rotation_value" id="rotation-value" value="0">
+                    <button type="submit" class="btn-submit">Apply</button>
+                </form>
+            </div>
+        </div>
+    </div>
+    <script src="{{ url_for('static', filename='js/scriptsrotation.js') }}"></script>
+</body>
+</html>

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Crop Interface</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/stylescrop.css') }}">
+</head>
+<body>
+    <div class="header">
+        <h1 class="logo-text">ADD CROP AUGMENTATION</h1>
+    </div>
+    <div class="container">
+        <div class="left-side">
+            <div class="card">
+                <img id="original-image" src="{{ file_url }}" alt="Original Image">
+                <p class="card-text">Preprocessed</p>
+            </div>
+            <div class="card">
+                <img id="cropped-image" src="{{ file_url }}" alt="Cropped Image">
+                <p id="crop-percentage">0%</p>
+                <p class="card-text">Cropped Image</p>
+            </div>
+            <a href="{{ url_for('augment', filename=request.args.get('filename')) }}" class="go-back">Go Back</a>
+        </div>
+        <div class="right-side">
+            <div class="form-container">
+                <div class="controls">
+                    <p class="des-text">Add variability to positioning and size to help your model be more resilient to subject translations and camera position.</p>
+                    <div class="slider-container">
+                        <span class="slider-value">0%</span>
+                        <div class="slider-wrapper">
+                            <input type="range" min="0" max="49" value="0" class="slider" id="crop-slider">
+                            <span class="slider-current-value" id="current-value">0%</span>
+                        </div>
+                        <span class="slider-value">49%</span>
+                    </div>
+                </div>
+                <div class="tip">
+                    <p>When should I use Random Crop?</p>
+                    <p>Short answer: If subjects in the wild may be occluded or may not be fully enclosed in the frame.</p>
+                </div>
+                <form action="/crop" method="post" id="crop-form">
+                    <input type="hidden" name="crop_value" id="crop-value" value="0">
+                    <button type="submit" class="btn-submit">Apply</button>
+                </form>
+            </div>
+        </div>
+    </div>
+    <script src="{{ url_for('static', filename='js/scriptscrop.js') }}"></script>
+</body>
+</html>

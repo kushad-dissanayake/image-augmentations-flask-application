@@ -1,0 +1,89 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Select Augmentations</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+    <script src="{{ url_for('static', filename='js/scriptsnewform.js') }}"></script>
+</head>
+<body>
+    <section class="header">
+        <div class="logo">
+            <h2 class="logo-text">ONE CLICK AUGMENTATION</h2>
+        </div>
+        <div class="container">
+            <h1>Select Augmentations for {{ filename }}</h1>
+            <form action="/augment" method="post" id="redirectForm">
+                <input type="hidden" name="filename" value="{{ filename }}">
+                <input type="hidden" name="crop_value" id="crop_value" value="">
+                <div class="row">
+                    <div class="card card-link" onclick="submitForm('/flip')">
+                        <img src="{{ url_for('static', filename='images/flip.jpeg') }}" alt="Flip">
+                        <p>Flip</p>
+                    </div>
+                    <div class="card card-link" onclick="submitForm('/crop?filename={{ filename }}')">
+                        <img src="{{ url_for('static', filename='images/crop.jpeg') }}" alt="Crop">
+                        <p>Crop</p>
+                    </div>                         
+                    <div class="card card-link" onclick="submitForm('/rotate?filename={{ filename }}')">
+                        <img src="{{ url_for('static', filename='images/rotate.jpeg') }}" alt="Rotate">
+                        <p>Rotate</p>
+                    </div>
+                    <div class="card">
+                        <img src="{{ url_for('static', filename='images/shear.jpeg') }}" alt="Shear">
+                        <p>Shear</p>
+                        <input type="checkbox" name="augmentations" value="shear">
+                    </div>
+                    <div class="card">
+                        <img src="{{ url_for('static', filename='images/grayscale.jpeg') }}" alt="Grayscale">
+                        <p>Grayscale</p>
+                        <input type="checkbox" name="augmentations" value="grayscale">
+                    </div>
+                    <div class="card">
+                        <img src="{{ url_for('static', filename='images/hue.jpeg') }}" alt="Hue">
+                        <p>Hue</p>
+                        <input type="checkbox" name="augmentations" value="hue">
+                    </div>
+                    <div class="card">
+                        <img src="{{ url_for('static', filename='images/saturation.jpeg') }}" alt="Saturation">
+                        <p>Saturation</p>
+                        <input type="checkbox" name="augmentations" value="saturation">
+                    </div>
+                    <div class="card">
+                        <img src="{{ url_for('static', filename='images/brightness.jpeg') }}" alt="Brightness">
+                        <p>Brightness</p>
+                        <input type="checkbox" name="augmentations" value="brightness">
+                    </div>
+                    <div class="card">
+                        <img src="{{ url_for('static', filename='images/exposure.jpeg') }}" alt="Exposure">
+                        <p>Exposure</p>
+                        <input type="checkbox" name="augmentations" value="exposure">
+                    </div>
+                    <div class="card">
+                        <img src="{{ url_for('static', filename='images/blur.jpeg') }}" alt="Blur">
+                        <p>Blur</p>
+                        <input type="checkbox" name="augmentations" value="blur">
+                    </div>
+                    <div class="card">
+                        <img src="{{ url_for('static', filename='images/noise.jpeg') }}" alt="Noise">
+                        <p>Noise</p>
+                        <input type="checkbox" name="augmentations" value="noise">
+                    </div>
+                    <div class="card">
+                        <img src="{{ url_for('static', filename='images/cutout.jpeg') }}" alt="Cutout">
+                        <p>Cutout</p>
+                        <input type="checkbox" name="augmentations" value="cutout">
+                    </div>
+                    <div class="card">
+                        <img src="{{ url_for('static', filename='images/mosaic.jpeg') }}" alt="Mosaic">
+                        <p>Mosaic</p>
+                        <input type="checkbox" name="augmentations" value="mosaic">
+                    </div>
+                </div>
+                <input type="submit" value="Apply Augmentations" class="btn-submit">
+            </form>
+        </div>
+    </section>
+</body>
+</html>

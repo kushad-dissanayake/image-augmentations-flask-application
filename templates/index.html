@@ -1,0 +1,23 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Image Upload</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styleindex.css') }}">
+</head>
+<body>
+    <section class="header">
+        <div class="logo">
+            <h2 class="logo-text">Pic Perfect</h2>
+        </div>
+        <div class="container">
+            <h1>Upload an Image</h1>
+            <form action="/upload" method="post" enctype="multipart/form-data">
+                <input type="file" name="file" accept="image/*" required>
+                <input type="submit" value="Upload Image">
+            </form>
+        </div>
+    </section>
+</body>
+</html>

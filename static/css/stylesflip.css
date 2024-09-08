@@ -1,0 +1,145 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #1d2630;
+    margin: 0;
+    padding: 0;
+}
+
+.header {
+    background-color: #1d2630;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    text-align: center;
+}
+
+.logo {
+    margin-bottom: 20px;
+}
+
+.logo-text {
+    color: white;
+    font-size: 30px;
+    font-weight: bold;
+    margin: 0;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    margin: 0 auto;
+    max-width: 1000px;
+    gap: 20px;
+}
+
+.left-side {
+    width: 40%;
+    background-color: #f1f1f1;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px; 
+}
+
+.right-side {
+    width: 40%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.card {
+    width: 100%;
+    max-width: 150px;
+    background-color: #ffffff;
+    padding: 10px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    text-align: center;
+}
+
+.card img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+}
+
+.card p {
+    font-size: 16px;
+    color: #333333;
+    margin-top: 10px;
+}
+
+.bottom-images {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    gap: 5px; 
+}
+
+.bottom-images .card {
+    width: 48%;
+}
+
+.form-container {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    width: 100%;
+    align-items: center;
+}
+
+.checkbox-container {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+}
+
+.checkbox-container label {
+    font-size: 25px;
+    color: white;
+}
+
+.checkbox-container input[type="checkbox"] {
+    transform: scale(1.5);
+    margin-right: 10px;
+}
+
+.btn-submit {
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 5px;
+    align-self: center;
+}
+
+.btn-submit:hover {
+    background-color: #45a049;
+}
+
+.go-back {
+    background-color: #555;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+    text-decoration: none;
+    display: inline-block;
+    border-radius: 5px;
+    margin-top: 20px;
+}
+
+.go-back:hover {
+    background-color: #777;
+}
+
+.vertical {
+    transform: rotate(180deg);
+}
